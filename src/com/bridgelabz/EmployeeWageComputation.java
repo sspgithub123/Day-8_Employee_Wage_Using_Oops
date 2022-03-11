@@ -6,6 +6,7 @@ public class EmployeeWageComputation {
         EmployeeWageComputation object = new EmployeeWageComputation();
         object.Uc1();
         object.Uc2();
+        object.Uc3();
     }
 
     public void Uc1(){
@@ -26,6 +27,26 @@ public class EmployeeWageComputation {
     int empWage = 0;
     double empCheck = Math.floor(Math.random() * 10) % 2;
         if (empCheck == isFullTime)
+    empHrs = 8;
+        else
+    empHrs = 0;
+    empWage = empHrs * empRatePerHour;
+        System.out.println("Emp Wage: " + empWage);
+
+    }
+    public void Uc3(){
+
+    int isPartTime = 1;
+    int isFullTime = 2;
+    int empRatePerHour = 20;
+
+    int empHrs = 0;
+    int empWage = 0;
+
+    double empCheck = Math.floor(Math.random() * 10) % 3;
+        if (empCheck == isPartTime)
+    empHrs = 4;
+        else if (empCheck == isFullTime)
     empHrs = 8;
         else
     empHrs = 0;
