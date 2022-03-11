@@ -1,12 +1,16 @@
 package com.bridgelabz;
 
 public class EmployeeWageComputation {
+    public static final int isPartTime = 1;
+    public static final int isFullTime = 2;
+    public static final int empRatePerHour = 20;
 
     public static void main(String[] args) {
         EmployeeWageComputation object = new EmployeeWageComputation();
         object.Uc1();
         object.Uc2();
         object.Uc3();
+        object.Uc4();
     }
 
     public void Uc1(){
@@ -51,6 +55,28 @@ public class EmployeeWageComputation {
         else
     empHrs = 0;
     empWage = empHrs * empRatePerHour;
+        System.out.println("Emp Wage: " + empWage);
+
+    }
+
+    public void Uc4(){
+        int empHrs = 0;
+        int empWage = 0;
+
+        int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+        switch (empCheck)
+        {
+            case isPartTime:
+                empHrs = 4;
+                break;
+            case isFullTime:
+                empHrs = 8;
+                break;
+            default:
+                empHrs = 0;
+        }
+
+        empWage = empHrs * empRatePerHour;
         System.out.println("Emp Wage: " + empWage);
 
     }
