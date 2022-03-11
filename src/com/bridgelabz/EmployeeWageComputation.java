@@ -18,6 +18,7 @@ public class EmployeeWageComputation {
     }
 
     public void Uc1(){
+        System.out.println("UC-1===============>");
         System.out.println("Welcome to Employee Wage Computation Program. ");
         int isFullTime = 1;
         double empCheck = Math.floor(Math.random() * 10) % 2;
@@ -25,9 +26,11 @@ public class EmployeeWageComputation {
             System.out.println("Employee is Present");
         else
             System.out.println("Employee is Absent");
+        System.out.println();
     }
 
     public void Uc2(){
+        System.out.println("UC-2===============>");
     int isFullTime = 1;
     int empRatePerHour = 20;
 
@@ -40,10 +43,11 @@ public class EmployeeWageComputation {
     empHrs = 0;
     empWage = empHrs * empRatePerHour;
         System.out.println("Emp Wage: " + empWage);
+        System.out.println();
 
     }
     public void Uc3(){
-
+        System.out.println("UC-3===============>");
     int isPartTime = 1;
     int isFullTime = 2;
     int empRatePerHour = 20;
@@ -60,10 +64,12 @@ public class EmployeeWageComputation {
     empHrs = 0;
     empWage = empHrs * empRatePerHour;
         System.out.println("Emp Wage: " + empWage);
+        System.out.println();
 
     }
 
     public void Uc4(){
+        System.out.println("UC-4===============>");
         int empHrs = 0;
         int empWage = 0;
 
@@ -79,13 +85,14 @@ public class EmployeeWageComputation {
             default:
                 empHrs = 0;
         }
-
         empWage = empHrs * empRatePerHour;
         System.out.println("Emp Wage: " + empWage);
+        System.out.println();
 
     }
 
     public void Uc5(){
+        System.out.println("UC-5===============>");
     int empHrs = 0;
     int empWage = 0;
     int totalEmpWage = 0;
@@ -102,16 +109,16 @@ public class EmployeeWageComputation {
             default:
                 empHrs = 0;
         }
-
         empWage = (empHrs * empRatePerHour);
         totalEmpWage += empWage;
         System.out.println("Emp Wage: " + empWage);
     }
         System.out.println("Total emp Wage: " + totalEmpWage);
-
+        System.out.println();
     }
 
     public void Uc6(){
+        System.out.println("UC-6===============>");
     int empHrs = 0;
     int totalEmpHrs = 0;
     int totalWorkingDays = 0;
