@@ -1,24 +1,25 @@
 package com.bridgelabz;
 
 public class EmployeeWageComputation {
-    public static final int isPartTime = 1;
-    public static final int isFullTime = 2;
-    public static final int empRatePerHour = 20;
-    public static final int nomOfWorkingDays = 20;
-    public static final int maxHrsInMonth = 100;
+    public static final int IS_PART_TIME = 1;
+    public static final int IS_FULL_TIME = 2;
+    public static final int EMP_RATE_PER_HOUR = 20;
+    public static final int NUMBER_OF_WORKING_DAYS = 20;
+    public static final int MAX_HRS_IN_MONTH = 100;
 
     public static void main(String[] args) {
         EmployeeWageComputation object = new EmployeeWageComputation();
-        object.Uc1();
-        object.Uc2();
-        object.Uc3();
-        object.Uc4();
-        object.Uc5();
-        object.Uc6();
+        object.attendance();
+        object.dailyWage();
+        object.partTime();
+        object.switchCase();
+        object.wageForMonth();
+        object.conditionalWage();
+        object.computeEmployeeWage();
     }
 
-    public void Uc1(){
-        System.out.println("UC-1===============>");
+    public void attendance() {
+        System.out.println("Attendance-1===============>>>>>>>>>>>>>>>>>>>>>");
         System.out.println("Welcome to Employee Wage Computation Program. ");
         int isFullTime = 1;
         double empCheck = Math.floor(Math.random() * 10) % 2;
@@ -29,119 +30,137 @@ public class EmployeeWageComputation {
         System.out.println();
     }
 
-    public void Uc2(){
-        System.out.println("UC-2===============>");
-    int isFullTime = 1;
-    int empRatePerHour = 20;
-
-    int empHrs = 0;
-    int empWage = 0;
-    double empCheck = Math.floor(Math.random() * 10) % 2;
-        if (empCheck == isFullTime)
-    empHrs = 8;
-        else
-    empHrs = 0;
-    empWage = empHrs * empRatePerHour;
-        System.out.println("Emp Wage: " + empWage);
-        System.out.println();
-
-    }
-    public void Uc3(){
-        System.out.println("UC-3===============>");
-    int isPartTime = 1;
-    int isFullTime = 2;
-    int empRatePerHour = 20;
-
-    int empHrs = 0;
-    int empWage = 0;
-
-    double empCheck = Math.floor(Math.random() * 10) % 3;
-        if (empCheck == isPartTime)
-    empHrs = 4;
-        else if (empCheck == isFullTime)
-    empHrs = 8;
-        else
-    empHrs = 0;
-    empWage = empHrs * empRatePerHour;
-        System.out.println("Emp Wage: " + empWage);
-        System.out.println();
-
-    }
-
-    public void Uc4(){
-        System.out.println("UC-4===============>");
+    public void dailyWage() {
+        System.out.println("dailyWage-2===============>>>>>>>>>>>>>>>>>>>>>>>>");
         int empHrs = 0;
         int empWage = 0;
-
-        int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-        switch (empCheck)
-        {
-            case isPartTime:
-                empHrs = 4;
-                break;
-            case isFullTime:
-                empHrs = 8;
-                break;
-            default:
-                empHrs = 0;
-        }
-        empWage = empHrs * empRatePerHour;
+        double empCheck = Math.floor(Math.random() * 10) % 3;
+        if (empCheck == IS_FULL_TIME)
+            empHrs = 8;
+        else
+            empHrs = 0;
+        empWage = empHrs * EMP_RATE_PER_HOUR;
         System.out.println("Emp Wage: " + empWage);
         System.out.println();
-
     }
 
-    public void Uc5(){
-        System.out.println("UC-5===============>");
-    int empHrs = 0;
-    int empWage = 0;
-    int totalEmpWage = 0;
+    public void partTime() {
+        System.out.println("partTime-3===============>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        int empHrs = 0;
+        int empWage = 0;
+        double empCheck = Math.floor(Math.random() * 10) % 3;
+        if (empCheck == IS_PART_TIME)
+            empHrs = 4;
+        else if (empCheck == IS_FULL_TIME)
+            empHrs = 8;
+        else
+            empHrs = 0;
+        empWage = empHrs * EMP_RATE_PER_HOUR;
+        System.out.println("Emp Wage: " + empWage);
+        System.out.println();
+    }
 
-        for (int day = 0; day < nomOfWorkingDays; day++) {
+    public void switchCase() {
+        System.out.println("switchCase-4===============>>>>>>>>>>>>>>>>>>>>>>>>");
+        int empHrs = 0;
+        int empWage = 0;
         int empCheck = (int) Math.floor(Math.random() * 10) % 3;
         switch (empCheck) {
-            case isPartTime:
+            case IS_PART_TIME:
                 empHrs = 4;
                 break;
-            case isFullTime:
+            case IS_FULL_TIME:
                 empHrs = 8;
                 break;
             default:
                 empHrs = 0;
         }
-        empWage = (empHrs * empRatePerHour);
-        totalEmpWage += empWage;
+        empWage = empHrs * EMP_RATE_PER_HOUR;
         System.out.println("Emp Wage: " + empWage);
+        System.out.println();
     }
+
+    public void wageForMonth() {
+        System.out.println("wageForMonth-5===============>>>>>>>>>>>>>>>>>>>>>>");
+        int empHrs = 0;
+        int empWage = 0;
+        int totalEmpWage = 0;
+
+        for (int day = 0; day < NUMBER_OF_WORKING_DAYS; day++) {
+            int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+            switch (empCheck) {
+                case IS_PART_TIME:
+                    empHrs = 4;
+                    break;
+                case IS_FULL_TIME:
+                    empHrs = 8;
+                    break;
+                default:
+                    empHrs = 0;
+            }
+            empWage = (empHrs * EMP_RATE_PER_HOUR);
+            totalEmpWage += empWage;
+            System.out.println("Emp Wage: " + empWage);
+        }
         System.out.println("Total emp Wage: " + totalEmpWage);
         System.out.println();
     }
 
-    public void Uc6(){
-        System.out.println("UC-6===============>");
-    int empHrs = 0;
-    int totalEmpHrs = 0;
-    int totalWorkingDays = 0;
+    public void conditionalWage() {
+        System.out.println("conditionalWage-6===============>>>>>>>>>>>>>>>>>>>>>");
+        int empHrs = 0;
+        int totalEmpHrs = 0;
+        int totalWorkingDays = 0;
 
-        while (totalEmpHrs <= maxHrsInMonth && totalWorkingDays < nomOfWorkingDays)
-    {
-        totalWorkingDays++;
-        int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-        switch (empCheck) {
-            case isPartTime:
-                empHrs = 4;
-                break;
-            case isFullTime:
-                empHrs = 8;
-                break;
-            default:
-                empHrs = 0;
+        while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUMBER_OF_WORKING_DAYS) {
+            totalWorkingDays++;
+            int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+            switch (empCheck) {
+                case IS_PART_TIME:
+                    empHrs = 4;
+                    break;
+                case IS_FULL_TIME:
+                    empHrs = 8;
+                    break;
+                default:
+                    empHrs = 0;
+            }
+            totalEmpHrs += empHrs;
+            System.out.println("Day#: " + totalWorkingDays + "EmpHr: " + empHrs);
         }
-        totalEmpHrs += empHrs;
-        System.out.println("Day#: " + totalWorkingDays + "EmpHr: " + empHrs);
-    }
-    int totalEmpWage = totalEmpHrs * empRatePerHour;
+        int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
         System.out.println("Total empWage: " + totalEmpWage);
+        System.out.println();
+    }
+
+    public void computeEmployeeWage() {
+        System.out.println("computeEmployeeWage-7===============>>>>>>>>>>>>>>>>>>>>>>>");
+        int workingHr = 0;
+        int totalWorkingHrs = 0;
+        int monthlyTotalWage = 0;
+
+        int[] daily_wage_array = new int[20];
+        for (int i = 0; i < NUMBER_OF_WORKING_DAYS && totalWorkingHrs < EMP_RATE_PER_HOUR; i++) {
+            int emp_check = (int) (Math.floor(Math.random() * 10)) % 3;
+            switch (emp_check) {
+                case 1:
+                    workingHr = 8;
+                    break;
+                case 2:
+                    workingHr = 4;
+                    break;
+                default:
+                    workingHr = 0;
+            }
+            totalWorkingHrs += workingHr;
+            daily_wage_array[i] = workingHr * EMP_RATE_PER_HOUR;
+        }
+        for (int j = 0; j < NUMBER_OF_WORKING_DAYS; j++) {
+            int day = j + 1;
+            System.out.println("Day " + day + " wage is " + daily_wage_array[j]);
+            monthlyTotalWage = monthlyTotalWage + daily_wage_array[j];
+        }
+        System.out.println("\nMonthly wage is " + monthlyTotalWage);
     }
 }
 
