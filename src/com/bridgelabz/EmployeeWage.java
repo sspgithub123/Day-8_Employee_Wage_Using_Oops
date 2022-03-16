@@ -1,11 +1,11 @@
 package com.bridgelabz;
 
-interface EmpWageBuilder {
+import java.util.ArrayList;
+
+interface empWageBuilder {
     public void computeEmpWage( companyEmpWage obj );
 }
-
-public class EmpWageOops
-        implements empWageBuilder {
+class empWageOops implements empWageBuilder {
     final int IS_PART_TIME = 1;
     final int IS_FULL_TIME = 2;
 
@@ -19,15 +19,15 @@ public class EmpWageOops
             int empCheck = (int) ((Math.random() * 10) % 3);
             switch (empCheck) {
                 case IS_PART_TIME:
-                    //    System.out.println("Employee is Present");
+                    // System.out.println("Employee is Present");
                     empHrs = 4;
                     break;
                 case IS_FULL_TIME:
-                    //    System.out.println("Employee is Present");
+                    // System.out.println("Employee is Present");
                     empHrs = 8;
                     break;
                 default:
-                    //    System.out.println("Employee is Absent");
+                    // System.out.println("Employee is Absent");
                     empHrs = 0;
             }
             totalWorkingDays++;
@@ -36,22 +36,24 @@ public class EmpWageOops
         companyEmpWage.setTotalEmpWage( totalEmpHrs * companyEmpWage.empRatePerHour );
         System.out.println("Employee Monthly Wage of " + companyEmpWage.getCompanyName() + " is " + companyEmpWage.getTotalEmpWage());
     }
+    //Main Function
     public static void main(String[] args) {
         System.out.println("WELCOME to EMPLOYEE WAGE Computation");
         empWageOops emp = new empWageOops();
-        //Array of object of Companyempwage class
-        companyEmpWage[] company = new companyEmpWage[10];
+        //ArrayList of Multiple Companies Wage
+
+        ArrayList<companyEmpWage> company = new ArrayList<companyEmpWage>();
         // assign value to object of Companyempwage
-        company[0] = new companyEmpWage("Dmart", 40, 20, 100);
-        emp.computeEmpWage(company[0]);
-        company[1] = new companyEmpWage("Relience", 30, 22, 120);
-        emp.computeEmpWage(company[1]);
-        company[2] = new companyEmpWage("BigBazar", 45, 18, 90);
-        emp.computeEmpWage(company[2]);
+        company.add( new companyEmpWage("Dmart", 40, 20, 100));
+        emp.computeEmpWage(company.get(0));
+        company.add( new companyEmpWage("Relience", 30, 22, 120));
+        emp.computeEmpWage(company.get(1));
+        company.add( new companyEmpWage("BigBazar", 45, 18, 90));
+        emp.computeEmpWage(company.get(2));
     }
 }
 
-class CompanyEmpWage {
+class companyEmpWage {
 
     public String companyName = " ";
     public int empRatePerHour = 0;
@@ -59,7 +61,7 @@ class CompanyEmpWage {
     public int maxHoursPerMonth = 0;
     public int totalEmpWage = 0;
 
-    public CompanyEmpWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth) {
+    public companyEmpWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth) {
         this.companyName = companyName;
         this.empRatePerHour = empRatePerHour;
         this.numOfWorkingDays = numOfWorkingDays;
