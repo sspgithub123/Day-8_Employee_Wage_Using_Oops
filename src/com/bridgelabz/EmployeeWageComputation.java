@@ -8,14 +8,14 @@ public class EmployeeWageComputation {
     public static final int MAX_HRS_IN_MONTH = 100;
 
     public static void main(String[] args) {
-        EmployeeWageComputation object = new EmployeeWageComputation();
-        object.attendance();
-        object.dailyWage();
-        object.partTime();
-        object.switchCase();
-        object.wageForMonth();
-        object.conditionalWage();
-        object.computeEmployeeWage();
+        EmployeeWageComputation employeewagecomputation = new EmployeeWageComputation();
+        employeewagecomputation.attendance();
+        employeewagecomputation.dailyWage();
+        employeewagecomputation.partTime();
+        employeewagecomputation.switchCase();
+        employeewagecomputation.wageForMonth();
+        employeewagecomputation.conditionalWage();
+        employeewagecomputation.computeEmployeeWage();
         System.out.println("WageForMultipleCompanies-8===============>>>>>>>>>>>>>>>>>>>>>");
         calculateEmpWage("Jio", 20, 10, 15);
         calculateEmpWage("Vodafone", 30, 8, 20);
@@ -168,7 +168,7 @@ public class EmployeeWageComputation {
         System.out.println("\nMonthly wage is " + monthlyTotalWage);
     }
 
-    //WageForMultipleCompanies
+    //UC8================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>WageForMultipleCompanies
     //Method to Calculate Employee Wage by Hours and Type
     public static void calculateEmpWage(String company, int wagePerHr, int numWorkingDays, int maxHrPerMonth) {
         // Local Variables
@@ -199,4 +199,6 @@ public class EmployeeWageComputation {
         System.out.println("Total Employee Wage for Company : " + company + " is : " + totalEmpWage);
     }
 }
+
+
 
